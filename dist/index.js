@@ -103585,7 +103585,7 @@ var core = __nccwpck_require__(6024);
 
 const connectDB = async () => {
 	try {
-		await mongoose_default().connect(core.getInput('mongoUri'));
+		await mongoose_default().connect(core.getInput('mongo_uri'));
 
 		console.log('MongoDB Connected...')
 	} catch (err) {

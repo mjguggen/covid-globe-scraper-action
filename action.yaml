@@ -3,5 +3,5 @@ author: Mike Guggenbuehl
 inputs:
   mongo_uri:
     required: true
-  github_token:
+  token:
     required: true

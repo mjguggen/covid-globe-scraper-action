@@ -26,7 +26,7 @@ const octo = new MyOctokit({
       );
     },
   },
-  auth: core.getInput('github_token')
+  auth: core.getInput('token')
 })
 
 const owner = 'CSSEGISandData'
