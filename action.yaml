@@ -1,0 +1,7 @@
+name: Globe Data Scraper
+author: Mike Guggenbuehl
+inputs:
+  mongo_uri:
+    required: true
+  github_token:
+    required: true
