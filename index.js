@@ -130,4 +130,4 @@ const run = async () => {
   return  
 }
 
-run().then(() => process.kill(process.pid))
+run().then(() => process.exit(0))
