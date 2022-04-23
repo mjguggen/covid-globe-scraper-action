@@ -103430,16 +103430,16 @@ const getAllFiles = async () => {
           await newCsv.save()
         }
       } catch (err) {
-        console.log(err.message)
+        core.setFailed(`Action failed with error ${err.message}`);
       }
     }))
   } catch (err) {
-    console.log(err.message)
+    core.setFailed(`Action failed with error ${err.message}`);
   }
 
   console.log("Data scrape done")
 
-  return
+  core.setOutput('Status: ', "Success!");
 }
 
 getAllFiles()
