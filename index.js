@@ -32,7 +32,7 @@ const octo = new MyOctokit({
 const owner = 'CSSEGISandData'
 const repo = 'COVID-19'
 
-const getAllFiles = async () => {
+const run = async () => {
   console.log('Initializing data scrape')
 
   try {
@@ -115,15 +115,19 @@ const getAllFiles = async () => {
         }
       } catch (err) {
         core.setFailed(`Action failed with error ${err.message}`);
+
+        return
       }
     }))
   } catch (err) {
     core.setFailed(`Action failed with error ${err.message}`);
+
+    return
   }
 
   console.log("Data scrape done")
 
-  core.setOutput('Status: ', "Success!");
+  return  
 }
 
-getAllFiles()
+run().then(() => process.kill(process.pid))
