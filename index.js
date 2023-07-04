@@ -45,6 +45,7 @@ const run = async () => {
     }).then(res => res.data.filter(i =>  
       i.name.includes('2021') 
       || i.name.includes('2022')
+      || i.name.includes('2023')
     ))
 
     await Promise.all(githubFiles.map(async ({name, sha}) => {
@@ -103,6 +104,8 @@ const run = async () => {
         })
 
         if (exists) {
+          console.log(`${date} already exists`)
+          
           await ParsedCsv.findOneAndUpdate({
             date
           }, output)
